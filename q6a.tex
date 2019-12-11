@@ -1,2 +1,24 @@
 % !TeX root = ./TMA03.tex
+\def\Cmax{C_{max}}%
+The model of tumour growth under radiotherapy from time $t=0$ to $t=t_1>0$ is given as
+\begin{equation}
+	\label{eq:6.1}
+	\deriv{C}{t} = -C\,\log\lr{\frac{C}{\Cmax}} - \frac{DC}{1+D},
+\end{equation}
 
+where, at time $t$, $C(t)$ is the size of the tumour, $\Cmax > 0$ is the maximum
+size of the tumour, a constant, so that $0 < C(t) \leq \Cmax$ , and $D(t) \geq 0$ is the
+rate at which the drug is administered.
+
+Now, making a change of variable
+\[
+	x = \log\lr{\frac{C}{\Cmax}},
+\]
+then,
+\begin{align*}
+	\deriv{x}{t} =& \deriv{C}{t}\cdot\deriv{x}{C},\\
+	\deriv{x}{t} =& \deriv{C}{t}\cdot \frac{1}{C},\\
+	\deriv{x}{t} =& \lrs{\cancelto{-1}{-C}\,\log\lr{\frac{C}{\Cmax}} - \frac{D\cancelto{1}{C}}{1+D}\,\,} \cdot\frac{1}{\cancelto{1}{C}}\quad,\\
+	\deriv{x}{t} =& -\log\lr{\frac{C}{\Cmax}} - \frac{D}{1+D},\\
+	\textrm{thus,}\quad\deriv{x}{t} =& -x -\frac{D}{1+D}, \qquad\textrm{where } -\infty < x \leq 0.
+\end{align*}
