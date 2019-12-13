@@ -1,1 +1,30 @@
 % !TeX root = ./TMA03.tex
+We are told that:
+\begin{quote}
+	It is required to reduce the size of the tumour from $C_0$ at $t = 0$ to $C_1$ at
+	$t = t_1$. Let $x_0$ = $\log(C_0/\Cmax)$ and $x_1 = \log(C_1/\Cmax)$. For the health of the
+	patient, it is desired to minimise the total amount of drug administered,
+	which is given by the functional
+	\[
+		S[D] = \Int{0}{t_1}{t}\,D(t).
+	\]
+\end{quote}
+So, by expressing $D$ in terms of $x$ and $\dot{x}=\dd x/\dd t$ it should be possible to show that $S[D]$ may be written as
+\[
+	S[x] = -\Int{0}{t_1}{t}\,\frac{\dot{x} + x}{1 + \dot{x} + x}.
+\]
+From part~(a)
+\begin{align*}
+	{}&\dot{x}     = -x - \frac{D}{1+D},\\
+	{}&\dot{x} + x = - \frac{D}{1+D},\\
+	{}&(\dot{x} + x)(1+D) = -D,\\
+	{}& (\dot{x} + x) + D(\dot{x} + x) = -D,\\
+	{}& D(\dot{x} + x) + D = -(\dot{x} + x),\\
+	{}& D(\dot{x} + x + 1) = -\dot{x} - x,\\
+	{}& D = \frac{-\dot{x} - x}{\dot{x} + x + 1}\,\,.
+\end{align*}
+So
+\[
+	S[x] = -\Int{0}{t_1}{t}\,\frac{\dot{x} + x}{\dot{x} + x + 1}\qquad\textrm{as required.}
+\]
+
