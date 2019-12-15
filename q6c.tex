@@ -1,1 +1,38 @@
-% !TeX root = ./TMA03.tex
+% !TeX root = ./TMA03.
+To show that the \el for $S[x]$ is given by
+\[
+	2\ddot{x} + 3\dot{x} + x = -1,\qquad\textrm{where } \ddot{x} = \dd^2x/\dd t^2,
+\]
+consider the following.
+
+The \el is given by\marginnote{HB p17.}%
+\[
+	\ELEd{F}{t}{x},\qquad y(a)=A,\quad y(b)=B.
+\]
+\[
+	\textrm{Let, } F = \frac{\dot{x} + x}{\dot{x} + x + 1},
+\]
+then using the quotient rule to determine $\partial F/\partial\dot{x}$ and $\partial F/\partial x$
+\begin{align*}
+		\pderiv{•}{\dot{x}}\lr{\frac{u}{v}} = \left.\lrs{v\pderiv{u}{\dot{x}} - u\pderiv{v}{\dot{x}}}\right/v^2\quad\textrm{where, }u=\dot{x} + x\textrm{ and } v=\dot{x} + x + 1.
+\end{align*}
+\begin{align*}
+	\pderiv{F}{\dot{x}} =& \frac{\lr{\dot{x} + x + 1}\cdot 1 - \lr{\dot{x} + x}\cdot 1}{\lr{\dot{x} + x + 1}^2} = \frac{1}{\lr{\dot{x} + x + 1}^2},\\
+	\pderiv{F}{x} =& \frac{\lr{\dot{x} + x + 1}\cdot 1 - \lr{\dot{x} + x}\cdot 1}{\lr{\dot{x} + x + 1}^2} = \frac{1}{\lr{\dot{x} + x + 1}^2}.
+\end{align*}
+\begin{align*}
+	\deriv{}{t}\lr{\pderiv{F}{\dot{x}}} =& \deriv{}{t}\lr{\dot{x} + x + 1}^{-2},\\
+	=& -2\lr{\dot{x} + x + 1}^{-3}\lr{\ddot{x}+\dot{x}},\\
+	=& \frac{-2\lr{\ddot{x}+\dot{x}}}{\lr{\dot{x} + x + 1}^{3}}.
+\end{align*}
+Therefore, the \el is
+\begin{align}
+	-\frac{2\lr{\ddot{x}+\dot{x}}}{\lr{\dot{x} + x + 1}^{3}} -& \frac{1}{\lr{\dot{x} + x + 1}^{2}} = 0,\nonumber\\
+	\frac{2\lr{\ddot{x}+\dot{x}}}{\lr{\dot{x} + x + 1}^{3}} =& -\frac{1}{\lr{\dot{x} + x + 1}^{2}},\nonumber\\
+	\frac{2\lr{\ddot{x}+\dot{x}}}{\lr{\dot{x} + x + 1}} =& -1,\nonumber\\
+	2\lr{\ddot{x}+\dot{x}} =& -\lr{\dot{x} + x + 1},\nonumber\\
+	2\lr{\ddot{x}+\dot{x}} + \lr{\dot{x} + x} =& -1,\nonumber\\
+	\label{6.2}
+	2\ddot{x} + 3\dot{x} + x =&-1,\quad\textrm{as required.}
+\end{align}
+\marginnote{$\ddot{x} = \dd^2x/\dd t^2.$}[-0.9cm]%
