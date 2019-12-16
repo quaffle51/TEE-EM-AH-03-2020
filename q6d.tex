@@ -1,1 +1,85 @@
 % !TeX root = ./TMA03.tex
+Now solving the second-order linear ordinary differential equation \eqref{eq:6.2} with the boundary conditions $x(0) = x_0$ and $x(t_1) = x_1$ as follows.
+
+The \auxe is
+\[
+	2\lambda^2 + 3\lambda + 1 = 0.
+\] 
+This has roots $\lambda_1=-1$ and $\lambda_2=-\half$. These roots are real and different so the complementary function is given by
+\[
+	y_c = c_1\e^{-t} + c_2\e^{-\half t},\quad\textrm{where } c_1 \textrm{ and } c_2 \textrm{ are arbitrary constants.}
+\]
+Using the method of undetermined coefficients to determine the particular solution to \eqref{eq:6.2} as follows.
+
+The particular solution to
+\[
+	2\deriv{^2x(t)}{t^2} + 3 \deriv{x(t)}{t} +x(t) = -1,
+\]
+is of the form
+\[
+	x_p(t) = a_1,
+\]
+where $a_1$ is an unknown constant to be determined as follows:
+\[
+	\deriv{x(t)}{t} = \deriv{}{t}\lr{a_1} = 0,
+\]
+and therefore
+\[
+	\deriv{^2x(t)}{t^2} = 0.
+\]
+Substituting the particular solution $x_p(t)$ in to \eqref{eq:6.2} gives
+\[
+	2\times0 + 3\times0 + a_1 = -1.
+\]
+Therefore, $a_1 = -1$ and the general solution is
+\begin{equation}
+	\label{eq:6.3}
+	x(t) = c_1\e^{-t} + c_2\e^{-\half t} - 1.
+\end{equation}
+
+Now using the boundary conditions to solve for the unknown constants $c_1$ and $c_2$ as follows.
+
+At $t=0$, $x(0) = x_0$ and substituting this condition into \eqref{eq:6.3} gives,
+\begin{equation}
+	\label{eq:6.4}
+	c_1 + c_2 - 1 = x_0.
+\end{equation}
+
+At $t=t_1$, $x(t_1) = x_1$ and substituting this condition into \eqref{eq:6.3} gives,
+\begin{equation}
+	\label{eq:6.5}
+	c_1\e^{-t_1} + c_2\e^{-\half t_1} - 1 = x_1
+\end{equation}
+From \eqref{eq:6.4}
+\begin{equation}
+	\label{eq:6.6}
+	c_1 = \lr{x_0 + 1} - c_2
+\end{equation}
+Substituting into \eqref{eq:6.5} for $c_1$ from \eqref{eq:6.6} and rearranging in terms of $c_2$
+\begin{align}
+	\label{eq:6.7}
+	{}&\lr{x_0 + 1}\e^{-t_1} -c_2\e^{-t_1} + c_2\e^{-\half t_1} = x_1 + 1,\nonumber\\
+	{}&\lr{x_0 + 1}\e^{-t_1} + c_2\lr{\e^{-\half t_1} - \e^{-t_1}} = \lr{x_1 + 1},\nonumber\\
+	{}&c_2\lr{\e^{-\half t_1} - \e^{-t_1}} = \lr{x_1 + 1} - \lr{x_0 + 1}\e^{-t_1},\nonumber\\
+	{}&c_2 = \frac{\lr{x_1 + 1} - \lr{x_0 + 1}\e^{-t_1}}{\lr{\e^{-\half t_1} - \e^{-t_1}}}.
+\end{align}
+Substituting for $c_2$ in \eqref{eq:6.6} from \eqref{eq:6.7}
+\begin{align}
+		\label{eq:6.8}
+		c_1 =& \lr{x_0 + 1} - \lrs{\frac{\lr{x_1 + 1} - \lr{x_0 + 1}\e^{-t_1}}{\lr{\e^{-\half t_1} - \e^{-t_1}}}},\nonumber\\
+		c_1 =& \frac{\lr{x_0 + 1}\lr{\e^{-\half t_1} - \e^{-t_1}} - \lr{x_1 + 1} + \lr{x_0 + 1}\e^{-t_1}}{\lr{\e^{-\half t_1} - \e^{-t_1}}}\nonumber\\
+		c_1 =& \frac{\lr{x_0 + 1}\e^{-\half t_1} - \lr{x_0 + 1}\e^{-t_1} - \lr{x_1 + 1} + \lr{x_0 + 1}\e^{-t_1}}{\lr{\e^{-\half t_1} - \e^{-t_1}}}\nonumber\\
+		c_1 =& \frac{\lr{x_0 + 1}\e^{-\half t_1} - \lr{x_1 + 1}}{\lr{\e^{-\half t_1} - \e^{-t_1}}} = \alpha.
+\end{align}
+Therefore, from \eqref{eq:6.4} 
+\begin{equation}
+	\label{eq:6.9}
+	c_2 = \lr{x_0 + 1} - \alpha.
+\end{equation}
+Substituting into \eqref{eq:6.3} for $c_1$ and $c_2$ from \eqref{eq:6.8} and \eqref{eq:6.9} respectively gives,
+\begin{equation*}
+	x(t) = \alpha\e^{-t} + \lr{x_0 + 1 - \alpha}\e^{-\half t} - 1 \quad (\alpha \textrm{ given in \eqref{eq:6.8}}),
+\end{equation*}
+as required.
+
+\rule{\textwidth}{2pt}
