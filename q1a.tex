@@ -1,6 +1,19 @@
 % !TeX root = ./TMA03.tex
-\def\xd{\dot{x}}%
-\def\yd{\dot{y}}%
+In order to show that the stationary paths of this parametric functional are given by the solutions of the equations
+\begin{equation*}
+	\deriv{x}{s} + \gamma\deriv{y}{s} = 2\lr{c - \lambda y}, \textrm{ and }
+\end{equation*}
+\begin{equation*}
+	\gamma\deriv{x}{s} + \deriv{y}{s} = 2\lr{d + \lambda x},
+\end{equation*}
+where $c$ and $d$ are constants and
+\begin{equation}
+	\label{eq:1.1}
+	s(t) = \Int{0}{t}{t} \sqrt{\xd^2 + 2\gamma\xd\yd + \yd^2}
+\end{equation}
+
+consider the following.
+
 From the parametric functional,
 \[
 	\Phi =\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^\half - \lambda\lr{x\yd - \xd y},\quad \lambda > 0,
@@ -17,7 +30,7 @@ The \el is given by
 \]
 Substituting into the \el for the derivatives obtained above gives,
 \[
-	\deriv{}{t}\lr{\half\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{2\xd + 2\gamma\yd} + \lambda y} + \lambda\yd = 0,
+	\deriv{}{t}\lr{\frac{1}{\cancelto{1}{2}}\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\cancelto{1}{2}\xd + \cancelto{1}{2}\gamma\yd} + \lambda y} + \lambda\yd = 0,
 \]
 \[
 	\deriv{}{t}\lr{\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\xd + \gamma\yd} + \lambda y} + \lambda\yd = 0,
@@ -26,21 +39,25 @@ and integrating the above express with respect to $t$ gives,
 \[
 	\lrs{\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\xd + \gamma\yd} + \lambda y} + \lambda y = 2c,
 \]
-where $c$ is an arbitrary constant. So,
+where $c$ is an arbitrary constant.
+\[
+	\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\xd + \gamma\yd} + 2 \lambda y = 2c,
+\]
+So,
 \begin{equation}
-	\label{eq:1.1}
+	\label{eq:1.2}
 	\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\xd + \gamma\yd} = 2\lr{c - \lambda y}.
 \end{equation}
-Now from the definition of $s$
+Now, from \eqref{eq:1.1} the definition of $s$,
 \begin{equation*}
 	\deriv{s}{t} = \lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^\half,
 \end{equation*}
 and
 \begin{equation}
-	\label{eq:1.2}
+	\label{eq:1.3}
 	\deriv{t}{s} = \left( 1 \middle/ \deriv{s}{t} \right) = \lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}.
 \end{equation}
-Substituting \eqref{eq:1.2} into \eqref{eq:1.1} gives,
+Substituting \eqref{eq:1.3} into \eqref{eq:1.2} gives,
 \begin{equation*}
 	\deriv{t}{s}\lr{\xd + \gamma\yd} = 2\lr{c - \lambda y},
 \end{equation*}
@@ -55,7 +72,7 @@ then
 \end{align*}
 thus, by the chain rule,
 \begin{equation}
-	\label{eq:1.3}
+	\label{eq:1.4}
 	\boxed{\deriv{x}{s} + \gamma\deriv{y}{s} = 2\lr{c - \lambda y}.}
 \end{equation}
 Similarly for $\yd$
@@ -84,10 +101,14 @@ and integrating the above express with respect to $t$ gives,
 	\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\gamma\xd + \yd} - \lambda x - \lambda x = 2d,
 \]
 where $d$ is an arbitrary constant. So,
+\[
+	\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\gamma\xd + \yd} - 2 \lambda x = 2d,
+\]
+and thus,
 \begin{equation*}
 	\lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half}\lr{\gamma\xd + \yd} = 2\lr{d + \lambda x}.
 \end{equation*}
-Recall, \eqref{eq:1.2} from above,
+Recall, \eqref{eq:1.3} from above,
 \begin{equation*}
 	\deriv{t}{s} = \lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^{-\half},
 \end{equation*}
@@ -99,7 +120,7 @@ and hence,
 \end{align*}
 Thus, by the chain rule,
 \begin{equation}
-	\label{eq:1.4}
+	\label{eq:1.5}
 	\boxed{\gamma\deriv{x}{s} + \deriv{y}{s} = 2\lr{d + \lambda x}.}
 \end{equation}
-Hence, the stationary paths of the given parametric functional are given by the solutions to equations \eqref{eq:1.3} and \eqref{eq:1.4}.
+Hence, the stationary paths of the given parametric functional are given by the solutions to equations \eqref{eq:1.4} and \eqref{eq:1.5}.

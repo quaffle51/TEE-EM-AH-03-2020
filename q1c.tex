@@ -1,1 +1,188 @@
 % !TeX root = ./TMA03.tex
+From equation \eqref{eq:1.4}
+\[
+	\deriv{x}{s} = 2\lr{c-\lambda y} - \gamma \deriv{y}{s}
+\]
+and from equation \eqref{eq:1.5}
+\[
+	\deriv{y}{s} = 2\lr{d + \lambda y} - \gamma \deriv{x}{s}
+\]
+Substituting into equation \eqref{eq:1.4} for $\dd y/ \dd s$ gives,
+\begin{align*}
+	{}&\deriv{x}{s} + \gamma \lr{2\lr{d + \lambda x} - \gamma \deriv{x}{s}} = 2\lr{c-\lambda y},\\
+	{}&\deriv{x}{s} + 2 \gamma \lr{d + \lambda x} - \gamma^2 \deriv{x}{s} = 2\lr{c-\lambda y},\\
+	{}&\deriv{x}{s}\lr{1 - \gamma^2} + 2 \gamma \lr{d + \lambda x}  = 2\lr{c-\lambda y},\\
+	{}&\deriv{x}{s}\lr{1 - \gamma^2} = 2\lr{c-\lambda y} - 2 \gamma \lr{d + \lambda x},\\
+	{}&\deriv{x}{s}\lr{1 - \gamma^2} = 2c-2\lambda y - 2 \gamma d  - 2\gamma\lambda x,\\
+	{}&\deriv{x}{s}\lr{1 - \gamma^2} = -2\lambda\lr{y + \gamma x} + 2\lr{c - \gamma d},\\
+	{}&x^\prime\lr{1 - \gamma^2} = -X+ D = D - X.
+\end{align*}
+Therefore, \marginnote{Where, $D=2\lr{c-\gamma d}$, $X=2\lambda(x-y)$ and $x^\prime = \deriv{y}{s}$.}[0.6cm]
+\begin{equation}
+\label{eq:1.10}
+	\boxed{(1-\gamma^2)x^\prime = D - X,}
+\end{equation}
+as required.
+
+Equation~\eqref{eq:1.5} is
+\[
+	\gamma\deriv{x}{s} + \deriv{y}{s} = 2\lr{d + \lambda x}.
+\]
+Substituting into equation~\eqref{eq:1.5} for $\dd x/\dd s$ from equation~\eqref{eq:1.4} gives,
+\begin{align*}
+	{}& \gamma \lr{2\lr{c-\lambda y} - \gamma\deriv{y}{s}} + \deriv{y}{s} = 2\lr{d + \lambda x},\\
+	{}& 2\gamma\lr{c-\lambda y} - \gamma^2\deriv{y}{s} + \deriv{y}{s} = 2\lr{d + \lambda x},\\
+	{}& \deriv{y}{s}\lr{1-\gamma^2} = 2\lr{d + \lambda x} - 2\gamma\lr{c-\lambda y},\\
+	{}& \deriv{y}{s}\lr{1-\gamma^2} = 2d + 2\lambda x - 2\gamma c + 2\gamma\lambda y,\\
+	{}& \deriv{y}{s}\lr{1-\gamma^2} = 2\lr{d - \gamma c} + 2\lambda\lr{x+\gamma y}.\\
+\end{align*}
+\marginnote{Where, $C=2\lr{d - \gamma c}$, $Y=2\lambda\lr{x+\gamma y}$ and $y^\prime=\deriv{y}{s}$}[0.6cm]
+\begin{equation}
+\label{eq:1.11}
+\therefore \qquad\boxed{\lr{1-\gamma^2}y^\prime = C + Y.}
+\end{equation}
+as required.
+
+Substituting for $x^\prime$ and $y^\prime$ from equations~\eqref{eq:1.10} and \eqref{eq:1.11}, respectively, into equation~\eqref{eq:1.9}
+\[
+	\frac{\lr{D-X}^2}{\lr{1-\gamma^2}^2} +2\gamma\frac{\lr{D-X}}{\lr{1-\gamma^2}}\frac{\lr{C+Y}}{\lr{1-\gamma^2}} + \frac{\lr{C+Y}^2}{\lr{1-\gamma^2}^2} = 1
+\]
+Expanding the above and cross multiplying by $\lr{1-\gamma^2}^2$ gives,
+\begin{align*}
+{}&D^2 -2DX + X^2 + 2\gamma\lr{D-X}\lr{C+Y} + C^2 + 2CY + Y^2 = \lr{1-\gamma^2}^2,\\
+{}&D^2 -2DX + X^2 + \lr{2\gamma D -2\gamma X}\lr{C+Y} + C^2 + 2CY + Y^2 = \lr{1-\gamma^2}^2,\\
+{}&D^2 -2DX + X^2 + 2\gamma CD + 2\gamma DY  -2\gamma CX -2\gamma XY + C^2 + 2CY + Y^2 = \lr{1-\gamma^2}^2,\\
+{}&X^2+Y^2-2\gamma XY + C^2 + D^2 + 2\gamma CD -2DX+2\gamma DY - 2\gamma CX +2CY = \lr{1-\gamma^2}^2,\\
+\end{align*}
+Collecting terms in just $X$ and just $Y$ gives,
+\begin{equation}
+\label{eq:1.12}
+X^2+Y^2-2\gamma XY +C^2+D^2+2\gamma CD - 2X\lr{D+\gamma C} + 2Y\lr{C+\gamma D} = \lr{1-\gamma^2}^2.
+\end{equation}
+Now, from above (see margin notes)
+\begin{align*}
+\lr{D + \gamma C} =& 2\lr{c-\gamma d} + \gamma\lr{2\lr{d-\gamma c}},\\
+=& 2c - \cancel{2\gamma d} +  \cancel{2\gamma d} -2\gamma^2c,\\
+=& 2c\lr{1-\gamma^2}.
+\end{align*}
+\begin{align*}
+\lr{C + \gamma D} =& 2\lr{d-\gamma c} + \gamma\lr{2\lr{c-\gamma d}},\\
+=& 2d - \cancel{2\gamma c} +  \cancel{2\gamma c} -2\gamma^2d,\\
+=& 2d\lr{1-\gamma^2}.
+\end{align*}
+So,
+\[
+	D + \gamma C = 2c\lr{1-\gamma^2}\quad\text{and}
+\]
+\[
+	C + \gamma D = 2d\lr{1-\gamma^2}.
+\]
+Substituting these expressions into equation~\eqref{eq:1.12} gives,
+\[
+X^2+Y^2-2\gamma XY +C^2+D^2+2\gamma CD - 4c\lr{1-\gamma^2}X + 4d\lr{1-\gamma^2}Y = \lr{1-\gamma^2}^2,
+\]
+as required.
+
+The boundary conditions are
+\[
+	x(0)=y(0)=0,\quad x(1)=R>0,\quad y(1)=0.
+\]
+Now, applying these boundary conditions to equation\eqref{eq:1.12} and from the margin notes above we have:
+\[
+	X(t) = 2\lambda\lr{\gamma x(t) + y(t)}.
+\]
+\[
+	Y(t) = 2\lambda\lr{x(t) + \gamma y(t)}.
+\]
+At $t=0$,
+\[
+	X(0) = 2\lambda\lr{\gamma x(0) + y(0)} = 0.
+\]
+\[
+	Y(0) = 2\lambda\lr{x(0) + \gamma y(0)} = 0.
+\]
+Thus, equation~\eqref{eq:1.12} at $t=0$ reduces to 
+\[
+	C^2 + D^2 + 2\gamma C D = \lr{1-\gamma^2}^2.
+\]
+At $t=1$,
+\[
+	X(1) = 2\lambda\lr{\gamma x(1) + y(1)} = 2\lambda\gamma R.
+\]
+\[
+	Y(1) = 2\lambda\lr{x(1) + \gamma y(1)} = 2\lambda R.
+\]
+Thus, when applied to equation~\eqref{eq:1.12},
+\begin{align*}
+	4\lambda^2\gamma^2R^2 +& 4\lambda^2 R^2 -2\gamma\lr{2\lambda\gamma R}\lr{2\lambda R}-4c\lr{1-\gamma^2}\lr{2\lambda\gamma R}\\
+	+& 4d\lr{1-\gamma^2}\lr{2\lambda R}+C^2+D^2 + 2\gamma CD = \lr{1-\gamma^2}^2.\\\\
+	4\lambda^2\gamma^2R^2 +& 4\lambda^2 R^2 - 8\lambda^2\gamma^2R^2 - 8c\lr{1-\gamma^2}\lambda\gamma R\\
+	+& 8d\lr{1-\gamma^2}\lambda R + C^2+D^2 + 2\gamma CD = \lr{1-\gamma^2}^2.
+\end{align*}
+Note from above that $C^2+D^2+2\gamma CD = \lr{1-\gamma^2}^2$, thus
+\begin{align*}
+	4\lambda^2\gamma^2R^2 +& 4\lambda^2 R^2 - 8\lambda^2\gamma^2R^2 - 8c\lr{1-\gamma^2}\lambda\gamma R
+	+ 8d\lr{1-\gamma^2}\lambda R = 0,
+\end{align*}
+which, after dividing through by $4\lambda R$, gives\marginnote{$\lambda,R\ne0$ and $\gamma^2 \ne 1$}[1 cm]
+\[
+	\lambda\gamma^2R + \lambda R - 2\lambda\gamma^2R - 2c\lr{1-\gamma^2}\gamma
+	+ 2d\lr{1-\gamma^2} = 0,
+\]
+\[
+	\lambda R - \lambda\gamma^2R - 2c\lr{1-\gamma^2}\gamma
+	+ 2d\lr{1-\gamma^2} = 0,
+\]
+\[
+	\lambda R\lr{1-\gamma^2} - 2c\lr{1-\gamma^2}\gamma
+	+ 2d\lr{1-\gamma^2} = 0,
+\]
+and dividing through by $\lr{1-\gamma^2}$, gives
+\[
+	\lambda R - 2c\gamma+ 2d = 0.
+\]
+Simplifying,
+\[
+	\lambda R - 2\lr{c\gamma+ d} = 0,
+\]
+and noting that the quantity $2\lr{c\gamma+ d}$ is equal to $C$, then
+\[
+	\lambda R + C = 0.
+\]
+Finally, 
+\begin{equation}
+\label{eq:1.13}
+	\boxed{C=-\lambda R,\quad R > 0,}
+\end{equation}
+as required.
+
+Recall that $C^2+D^2+2\gamma CD = \lr{1-\gamma^2}^2$ and $C=-\lambda R,\quad R > 0$. 
+
+Thus,
+\[
+	\lambda^2 R^2 + D^2 + 2\gamma\lr{-\lambda R}D = \lr{1-\gamma^2}^2,
+\]
+\[
+	D^2 - 2\lambda\gamma RD + \lambda^2R^2 - \lr{1-\gamma^2}^2 = 0.
+\]
+Solving for $D$ in the above quadratic,
+\begin{align*}
+	D =& \frac{ 
+				2\lambda\gamma R \pm \sqrt[•]{4\lambda^2\gamma^2 R^2 - 4 \lr{\lambda^2R^2 - \lr{1-\gamma^2}^2}}
+	    }
+	    {
+	    			2
+	    },\\
+	D =& \lambda\gamma R \pm \sqrt[•]{\lambda^2\gamma^2 R^2 -\lambda^2R^2 + \lr{1-\gamma^2}^2},\\
+	D =& \lambda\gamma R \pm \sqrt[•]{\lambda^2R^2(\gamma^2 -1) + \lr{1-\gamma^2}^2},\\
+	D =& \lambda\gamma R \pm \sqrt[•]{-\lambda^2R^2(1-\gamma^2) + \lr{1-\gamma^2}^2}
+\end{align*}
+It is seen that $D$ will always have two real roots if $\gamma^2 > 1$, as in the expression below
+\[
+	D = \lambda\gamma R \pm \sqrt[•]{-\lambda^2R^2(1-\gamma^2) + \lr{1-\gamma^2}^2}
+\]
+$\lr{1-\gamma^2}^2 > 0$ and $\lr{1-\gamma^2} < 0$ and consequently $-\lambda^2R^2(1-\gamma^2)> 0$ making the entire quantity inside the radical positive.
+
+Also, if $\gamma^2 < 1$ the $\lr{1-\gamma^2} > 0$ with $-\lambda^2R^2\lr{1-\gamma^2} < 0$ and the quantity $\lr{1-\gamma^2}^2 - \lambda^2R^2\lr{1-\gamma^2}>0$ provided that $\lambda^2R^2\lr{1-\gamma^2} < \lr{1-\gamma^2}^2$, that is if $\lambda R < \sqrt{\lr{1-\gamma^2}}$, there will be two real roots of $D$.
+
+Conversely, if $\lr{1-\gamma^2}^2 - \lambda^2R^2\lr{1-\gamma^2}<0$ then $\lambda^2R^2\lr{1-\gamma^2} > \lr{1-\gamma^2}^2$, that is $\lambda R > \sqrt{\lr{1-\gamma^2}}$, there will not be any real solutions of $D$.

@@ -1,1 +1,40 @@
 % !TeX root = ./TMA03.tex
+It can be shown that
+\begin{equation*}
+\lr{\deriv{x}{s}}^2 + 2\gamma\deriv{x}{s}\cdot\deriv{y}{s} + \lr{\deriv{y}{s}}^2 = 1,
+\end{equation*}
+as follows.
+
+From part~(a)
+\begin{equation*}
+	\deriv{s}{t} = \lr{\xd^2 + 2\gamma\xd\yd + \yd^2}^\half,
+\end{equation*}
+and squaring both sides of the above expression gives,
+\begin{equation}
+	\label{eq:1.6}
+	\deriv{s}{t} \cdot \deriv{s}{t}= \lr{\xd^2 + 2\gamma\xd\yd + \yd^2},
+\end{equation}
+Again, recall that
+\begin{equation*}
+	\deriv{x}{t} = \xd \quad \textrm{and} \quad \deriv{y}{t} = \yd,
+\end{equation*}
+so that \eqref{eq:1.6} becomes
+\begin{equation}
+	\label{eq:1.7}
+	\deriv{s}{t} \cdot \deriv{s}{t}= \lr{\deriv{x}{t}\cdot\deriv{x}{t} + 2\gamma\deriv{x}{t}\cdot\deriv{y}{t} + \deriv{y}{t}\cdot\deriv{y}{t}},
+\end{equation}
+multiplying both sides of equation \eqref{eq:1.7} by
+\[
+	\deriv{t}{s}\cdot\deriv{t}{s}
+\]
+gives,
+\begin{equation}
+	\label{eq:1.8}
+	\deriv{t}{s}\cdot\deriv{t}{s}\cdot\deriv{s}{t} \cdot \deriv{s}{t}= \deriv{t}{s}\cdot\deriv{t}{s}\cdot\deriv{x}{t}\cdot\deriv{x}{t} + 2\gamma\deriv{t}{s}\cdot\deriv{t}{s}\cdot\deriv{x}{t}\cdot\deriv{y}{t} + \deriv{t}{s}\cdot\deriv{t}{s}\cdot\deriv{y}{t}\cdot\deriv{y}{t},
+\end{equation}
+then by the chain rule \eqref{eq:1.8} becomes
+\begin{equation}
+\label{eq:1.9}
+	1 = \lr{\deriv{x}{s}}^2 + 2\gamma\deriv{x}{s}\cdot\deriv{y}{s} + \lr{\deriv{y}{s}}^2,
+\end{equation}
+as required.

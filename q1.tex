@@ -1,5 +1,12 @@
 % !TeX root = ./TMA03.tex
 \begin{question}
+\def\xd{\dot{x}}%
+\def\yd{\dot{y}}%
+Let $\gamma$ be a real constant with $\gamma^2 \neq 1 $ for the parametric functional
+\[
+	S\lrs{x,y} = \Int{0}{1}{t} \lrs{\sqrt{\xd^2 + 2\gamma\xd\yd + \yd^2} - \lambda\lr{x\yd - \xd y}},\quad \lambda > 0,
+\]
+with the boundary conditions $x(0) = y(0) = 0, x(1) = R > 0$ and $y(1) = 0$.
 \qpart %(a)
 \input{q1a}
 \qpart %(b)
