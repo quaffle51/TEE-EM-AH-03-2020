@@ -1,1 +1,50 @@
-% !TeX root = ./TMA03.tex
+% !TeX root = ./TMA03.tex%
+Using the equations found in part~(a) it can be shown that $v$ is given by the real solution(s) of
+$f (v) = 0$, where
+\[f(v) = v^2 - 2v(1 + \sinh v) \cosh v + 1 + 2 \sinh v.\] as follows:
+
+Recall from part~(a) that,
+\begin{equation}
+\label{eq:2.2}
+	v = \cosh v + B \sinh v,
+\end{equation}
+\begin{equation}
+\label{eq:2.3}
+	B^2 - 1 = 2\sinh v + 2 B\cosh v,
+\end{equation}
+From \eqref{eq:2.2}
+\begin{equation}
+\label{eq:2.4}
+	B = \frac{v-\cosh v}{\sinh v}.
+\end{equation}
+Substituting \eqref{eq:2.4} into \eqref{eq:2.3} gives,
+\[
+	\lr{\frac{v-\cosh v}{\sinh v}}^2 - 1 = 2\sinh v + 2\lr{\frac{v-\cosh v}{\sinh v}}\cosh v,
+\]
+\begin{align*}
+	\frac{v^2 -2v \cosh v + \lr{\cosh^2 v - 2\sinh^2 v}}{\sinh^2 v} =\\ 
+	2\sinh v + 2\lr{\frac{v-\cosh v}{\sinh v}}\cosh v,
+\end{align*}
+\begin{align*}
+	\frac{v^2 -2v \cosh v + 1}{\sinh^2 v} =
+	\frac{2\sinh^2 v + 2v\cosh v - 2\cosh^2v}{\sinh v},
+\end{align*}
+\begin{align*}
+	\frac{v^2 -2v \cosh v + 1}{\sinh v} = -2\lr{\cosh^2v -\sinh^2v} + 2v\cosh v,
+\end{align*}
+\begin{align*}
+	\frac{v^2 -2v \cosh v + 1}{\sinh v} = -2 + 2v\cosh v,
+\end{align*}
+\begin{align*}
+	{}&v^2 -2v \cosh v + 1 = 2\sinh v\lr{v\cosh v - 1},\\
+	{}&v^2 = 2v \cosh v - 1 + 2\sinh v\lr{v\cosh v - 1},\\
+	{}&v^2 = 2v\sinh v \cosh v - 2\sinh v + 2v\cosh v -1,\\
+	{}&v^2 = 2v\cosh v\lr{\sinh v + 1} - 2\sinh v -1,
+\end{align*}
+\begin{equation}
+\label{eq:2.5}
+	\boxed{\therefore f(v)=v^2 - 2v\lr{1+\sinh v}\cosh v + 1 + 2\sinh v = 0.}
+\end{equation}
+
+
+	

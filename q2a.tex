@@ -1,1 +1,62 @@
 % !TeX root = ./TMA03.tex
+The integrand is 
+\[
+	F = y^{\prime2} + y^2,
+\]
+and the \el is given by
+\[
+	\EL,
+\]
+where
+\[
+	\pderiv{F}{y^\prime} = 2y^\prime, \quad \deriv{}{x}\lr{\pderiv{F}{y^\prime}}=\deriv{}{x}\lr{2y^\prime} = 2y^\dprime\quad\text{and}\quad \pderiv{F}{y}=2y.
+\]
+Thus, the \el can be written as
+\[
+	2y^\dprime - 2y = 0\quad\text{or}\quad \deriv{^2y}{x^2} - y = 0.
+\]
+The auxiliary equation is $\lambda^2 - 1 = 0$ and has general solution
+\[
+	y = A \cosh\lr{x} +  B \sinh\lr{x}.
+\]
+When $x=0,\quad y(0)=1$, so
+\[
+	1 = A \cosh\lr{0} +  B \sinh\lr{0},\text{ therefore } A=1.
+\]
+When $x=v,\quad y(v)=v$, so
+\[
+	v = \cosh\lr{v} +  B \sinh\lr{v},\text{ therefore } B=\frac{v-\cosh\lr{v}}{\sinh\lr{v}}.
+\]
+
+Now, using the \textbf{Transversality Condition} in which the end of the curve can be expressed in the form $y=g(x)$ and also noting that $y\lr{v}=v$, then:\marginnote{HB p.25}[-1cm]
+\[
+	F + \lr{g^\prime(x) - y^\prime(x)}F_{y^\prime} = 0 \text{ at } x=v,
+\]
+Now, $g(x) = x$ so $g^\prime(x) = 1$ and from above $F = y^{\prime2} + y^2$, hence
+\[
+	\lr{y^{\prime2} + y^2 } + \lr{1 - y^\prime}2y^\prime = 0,
+\]
+\[
+	y^{\prime2} + y^2 + 2y^\prime - 2y^{\prime 2} = 0,
+\]
+\begin{equation}
+\label{eq:2.1}
+	-y^{\prime2} + 2y^\prime + y^2 = 0  \text{ at } x=v.
+\end{equation}
+From above $y(x) = \cosh x + B\sinh x$ and therefore $y^\prime(x) = \sinh x + B \cosh x$
+
+Substituting these expressions into \eqref{eq:2.1} at $x=v$ gives,
+\[
+	-\lr{\sinh v + B \cosh v}^2 + 2\lr{\sinh v + B \cosh v} + \lr{\cosh v + B\sinh v}^2 = 0
+\]
+which simplifies to
+\[
+	-\sinh^2 v -  B^2 \cosh^2 v + 2\sinh v + 2B\cosh v + \cosh^2 v + B^2\sinh^2 v = 0
+\]
+Note: $\cosh^2 v - \sinh^2 v = 1$, so
+\[
+	1 - B^2 + 2\sinh v + 2B\cosh v = 0,
+\]
+\[
+	\boxed{\text{therefore, } B^2 - 1 = 2\sinh v + 2 B\cosh v}
+\]

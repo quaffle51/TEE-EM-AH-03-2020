@@ -1,1 +1,37 @@
 % !TeX root = ./TMA03.tex
+\begin{pycode}
+import math
+def f(v):
+	return math.pow(v,2) - 2*v*(1+math.sinh(v))*math.cosh(v) + 1 + 2*math.sinh(v)
+\end{pycode}
+To deduce that there is only one stationary path, which is equivalent to proving that $f(v)=0$ has exactly one solution for $v>0$, consider the following.
+
+\marginnote{$f(0)=\py{f(0)}$}[0.8 cm]
+\marginnote{$f(1)=\py{round(f(1),3)}$ rounded to 3 figures}[1.4 cm]
+First, it is necessary to show that $f(v)=0$ has at least one solution in the interval $0<v<\infty$. Now $f$ is continuous on $[0,1]$ with $f(0)> 0$ and $f(1) < 0$. Thus, by the \textbf{Intermediate Value Theorem}, it follows that $f(v)=0$ for some value of $v$ in the interval $(0,1)$ and hence in $(0,\infty)$. Consequently, $f(v)=0$ has at least one solution in the interval $0<v<\infty$.
+
+Next, it is necessary to show that $f(v)=0$ has at most one solution in the interval $0<v<\infty$. Assume that it has more that one solution in this interval and choose two solutions within this interval; say at $v=a$ and $v=b$ and suppose $a < b$.  Then, since $f$ is continuous on the interval $[a,b]$ and so differentiable on this interval, with $f(a)=0$ and $f(b)=0$ and it follows from \textbf{Rolle's Theorem} that $f^\prime(d)=0$ for some $d$ in $(a,b)$. However, $f^\prime(v) < 0$ for all $v>0$ (see below). Hence this shows that $f^\prime(v)$ cannot be zero in the interval $(a,b)$ and there exists a contradiction, thus showing that $f(x) = 0$ has at most one solution in the interval $0<v<\infty$. This coupled with the fact that $f(v) = 0$ has at least one solution in the interval $0 < v < \infty$ leads to the conclusion that this equation has exactly one solution in the given interval.
+
+\begin{align*}
+	f(v) =& v^2 - 2v\lr{1+\sinh v}\cosh v + 1 + 2\sinh v,\\
+	f^\prime(v) =& \deriv{}{v}\lr{v^2} -2\deriv{}{v}\lr{v\lr{1+\sinh v}\cosh v} +\deriv{}{v}\lr{1} + 2\deriv{}{v}\lr{\sinh v},\\
+	=& 2v -2\deriv{}{v}\lr{v\lr{1+\sinh v}\cosh v} + 2\cosh v,\\
+	=& 2v -2\deriv{}{v}\lr{v\cosh v + v\sinh v\cosh v} + 2\cosh v,\\
+	=& 2v -2\deriv{}{v}\lr{v\cosh v} - 2\deriv{}{v}\lr{v\sinh v\cosh v} + 2\cosh v,
+\end{align*}
+\begin{align*}
+	=& 2v -2\lr{v\sinh v + \cosh v} - 2\deriv{}{v}\lr{v\sinh v\cosh v} + 2\cosh v,\\
+	=& 2v -2v\sinh v -2 \cosh v - 2\deriv{}{v}\lr{v\sinh v\cosh v} + 2\cosh v,
+\end{align*}
+Simplifying
+\begin{align*}
+	f^\prime(v)=&2v\lr{1 -\sinh v} - 2\deriv{}{v}\lr{v\sinh v\cosh v},\\
+	=& 2v\lr{1 -\sinh v}-2\lr{\sinh v\cosh v+v\cosh v\cosh v + v \sinh v \sinh v},\\
+	=& 2v\lr{1 -\sinh v}-2\sinh v\cosh v-2v\lr{\cosh^2 v + \sinh^2 v},\\
+	=& 2\lr{v\lr{1 -\sinh v}-\sinh v\cosh v-v\lr{\cosh^2 v + \sinh^2 v}},\\
+	=& 2\lr{v - v\sinh v-\sinh v\cosh v-v\cosh^2 v -v\sinh^2 v}
+\end{align*}
+Inspection of the last expressions shows that $f^\prime(v)$ is negative for all $v>0$.
+
+
+
