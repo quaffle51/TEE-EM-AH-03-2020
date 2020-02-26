@@ -1,3 +1,74 @@
 % !TeX root = ./TMA03.tex
 \begin{question}
+The method of Lagrange multipliers will be used to find the function $y(x)$ that makes the functional
+\[
+	S[y] = \Int{1}{2}{x}x^2 y^2
+\]
+stationary subject to the two constraints
+\[
+	\Int{1}{2}{x} x y = 1\quad\text{and}\quad\Int{1}{2}{x} x^2 y = 2.
+\]
 \end{question}
+Given the functional
+\[
+	S[y] = \Int{1}{2}{x}x^2 y^2
+\]
+and the constraints 
+\[
+	\Int{1}{2}{x} x y = 1\quad\text{and}\quad\Int{1}{2}{x} x^2 y = 2.
+\]
+then
+\[
+	\overline{F} = x^2y^2 - \lambda x y - \mu x^2 y,
+\]
+where $\lambda$ and $\mu$ are Lagrange multipliers.  As $\overline{F}$ does not include the derivative of $y$ then the \el is simply given by
+\[
+	\deriv{\overline{F}}{y} = 2x^2y-\lambda x - \mu x^2 = 0,
+\]
+which, upon dividing through by $x$ gives
+\[
+	2xy-\lambda - \mu x = 0.
+\]
+Rearranging the above in terms of $y$ gives the general solution,
+\[
+	y(x) \frac{\lambda + \mu x}{2x}
+\]
+Both $\lambda$ and $\mu$ can be found by using the constraints as follows.
+\[
+	C_1[y] = \Int{1}{2}{x} \frac{\cancelto{1}{x}\lr{\lambda + \mu x}}{2\cancelto{1}{x}} = 1,
+\]
+which, after integration and the application of the limits of integration gives,
+\begin{equation}
+	\label{eq:4.1}
+	\half \lambda + \frac{3}{4}\mu=1.
+\end{equation}
+\[
+	C_2[y] = \Int{1}{2}{x} \frac{\cancelto{x}{x^2}\lr{\lambda + \mu x}}{2\cancelto{1}{x}} = 2,
+\]
+which, again after integration and the application of the limits of integration gives,
+\begin{equation}
+	\label{eq:4.2}
+	\frac{3}{4} \lambda + \frac{7}{6}\mu=2.
+\end{equation}
+Solving for $\lambda$ and $\mu$ from equations \eqref{eq:4.1} and \eqref{eq:4.2} gives,
+\[
+	\lambda = -16\quad\text{and}\quad \mu = 12.
+\]
+Hence,
+\[
+	y(x) = \frac{2\lr{3x-4}}{x}.
+\]
+The stationary value of $S[y]$ is calculated as follows.
+\begin{align*}
+	S[y] =& \Int{1}{2}{x},\\
+	=& \Int{1}{2}{x} x^2\lr{\frac{2\lr{3x-4}}{x}}^2,\\
+	=& \Int{1}{2}{x}\frac{\cancelto{1}{x^2}4\lr{3x-4}^2}{\cancelto{1}{x^2}},\\
+	=& \Int{1}{2}{x}4\lr{9x^2-24x+16},\\
+	=& 4\Int{1}{2}{x}\lr{9x^2-24x+16},\\
+	=&4\lrs{\frac{9}{3}x^3-\frac{24}{2}x^2+16x}_1^2,\\
+	=&4\lrs{3x^3-12x^2+16x}_1^2,\\
+	=&4\lr{3\cdot8-12\cdot4+16\cdot2}-4\lr{3-12+16},\\
+	=&4\lr{24-48+32}-4\lr{7},\\
+	=&4\lr{8}-4\lr{7},\\
+	=&4.
+\end{align*}
