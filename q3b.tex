@@ -1,1 +1,94 @@
 % !TeX root = ./TMA03.tex
+To find, in terms of the fixed perimeter $P = 2s$, the maximum area of a right-angled triangle with perimeter $P$ consider the following.
+
+This problem has two constraints. Therefore, there are two Lagrange multipliers, $\lambda$ and $\mu$, one for each constraint. The auxiliary equation is
+\[
+	\overline{F}(a,b,c,\lambda, \mu) = f(a,b,c) - \lambda g_1(a,b,c) - \mu g_2(a,b,c),
+\]
+and finding the stationary points of this is achieved by finding the solutions of
+\[
+	\pderiv{\overline{F}}{a} = 0,\quad
+	\pderiv{\overline{F}}{b} = 0,\quad
+	\pderiv{\overline{F}}{c} = 0,
+\]
+The first constraint relates to the triangle being right angled. Assuming side $c$ is the hypotenuse, then Pythagoras' Theorem
+\[
+	a^2 + b^2 = c^2
+\]
+and the constraint becomes $g_1(a,b,c) = a^2 + b^2 - c^2$.
+
+The second constraint relates to the triangle having a fixed perimeter as in part~(a), namely $g_2(a,b,c) = a + b + c -2s$.
+
+Thus, the auxiliary equation given above becomes
+\[
+	\overline{F} = \sqrt{s(s-a)(s-b)(s-c)} - \lambda\lr{a^2 + b^2 - c^2} - \mu\lr{a + b + c - 2s}.
+\]
+\begin{align*}
+	\deriv{\overline{F}}{a} =&\frac{-s(s-b)(s-c)}{2\sqrt{s(s-a)(s-b)(s-c)}} - 2\lambda a - \mu=0,\\
+	\deriv{\overline{F}}{b} =&\frac{-s(s-a)(s-c)}{2\sqrt{s(s-a)(s-b)(s-c)}} - 2\lambda b - \mu=0,\\
+	\deriv{\overline{F}}{c} =&\frac{-s(s-a)(s-b)}{2\sqrt{s(s-a)(s-b)(s-c)}} - 2\lambda c - \mu=0.
+\end{align*}
+Recall that $A=\sqrt{s(s-a)(s-b)(s-c)}$, so
+\begin{align}
+	\label{eq:3.1}
+	{}&\frac{-s(s-b)(s-c)}{2A} - 2\lambda a - \mu=0,\\
+	\label{eq:3.2}
+	{}&\frac{-s(s-a)(s-c)}{2A} - 2\lambda b - \mu=0,\\
+	\label{eq:3.3}
+	{}&\frac{-s(s-a)(s-b)}{2A} + 2\lambda c - \mu=0.
+\end{align} 
+Subtracting \eqref{eq:3.2} from \eqref{eq:3.1} gives,
+\[
+	\lr{\frac{-s(s-b)(s-c)}{2A} - 2\lambda a - \mu} -\lr{\frac{-s(s-a)(s-c)}{2A} - 2\lambda b - \mu} = 0
+\]
+\[
+	\frac{-s(s-b)(s-c)}{2A} - 2\lambda a - \mu + \frac{s(s-a)(s-c)}{2A} + 2\lambda b + \mu =0
+\]
+\[
+	\frac{-s(s-b)(s-c)}{2A} - 2\lambda a + \frac{s(s-a)(s-c)}{2A} + 2\lambda b=0
+\]
+\[
+	\frac{-s(s-b)(s-c)}{2A} + \frac{s(s-a)(s-c)}{2A} + 2\lambda (b  - a)=0
+\]
+\[
+	\frac{-s(s-b)(s-c) + s(s-a)(s-c)}{2A} + 2\lambda (b  - a)=0
+\]
+\[
+	s(s-c)\frac{-(s-b) + (s-a)}{2A} + 2\lambda (b  - a)=0
+\]
+\[
+	s(s-c)\frac{-s+b + s-a}{2A} + 2\lambda (b  - a)=0
+\]
+\[
+	\frac{s(s-c)(b -a)}{2A} + 2\lambda (b  - a)=0
+\]
+\[
+	(b -a)\lr{\frac{s(s-c)}{2A} + 2\lambda}=0
+\]
+\[
+	(b -a)\lr{s(s-c) + 4A\lambda}=0
+\]
+and so $b-a = 0$ or $s(s-c) + 4A\lambda=0$ with $s\ne 0, c$.\marginnote{$\therefore -4A\lambda = s(s-c)$ and this result will be used below.}
+
+Subtracting \eqref{eq:3.3} from \eqref{eq:3.1} gives,
+\begin{align*}
+	{}&\frac{-s(s-b)(s-c)}{2A} + \frac{s(s-a)(s-b)}{2A} -2\lambda(a+c) = 0,\\
+	{}&\frac{-s(s-b)(s-c) + s(s-a)(s-b)}{2A} - 2\lambda(a+c) = 0,\\
+	{}&s(s-b)\frac{-(s-c) + (s-a)}{2A} - 2\lambda(a+c) = 0,\\
+	{}&s(s-b)\frac{-s+c + s-a}{2A} - 2\lambda(a+c) = 0,\\
+	{}&\frac{s(s-b)(c-a)}{2A} - 2\lambda(a+c) = 0,\\
+	{}&s(s-b)(c-a) - 4A\lambda(a+c) = 0,\\
+	\text{recall that }{}& -4A\lambda = s(s-c), \text{ so }\\
+	{}&\cancelto{1}{s}(s-b)(c-a) +\cancelto{1}{s}(s-c)(a+c) = 0,\\
+	{}&sc-sa-bc+ab+sa+sc-ac-c^2=0,\\
+	{}&2sc-bc+ab -ac-c^2=0,\\
+	{}&ab + c(2s - a - b - c)=0.
+\end{align*}
+Now it is noted that $2s - a - b - c = 0$, but $ab = 0$ is not possible so $a = b$, and by Pythagoras' Theorem $c=\sqrt{a^2 + a^2} = a\sqrt{2}$ and the perimeter $P=a+b+c = a + a + a\sqrt{2} = a(2+\sqrt{2})$.\marginnote{$s=\dfrac{a+b+c}{2}$}[-1.25cm]%
+
+The area of a right-angled triangle is given by $A = \half a b = \half a^2$. From the foregoing $a = \dfrac{P}{\lr{2+\sqrt{2}}}$.
+So,
+\[
+	\boxed{A = \half\lr{\frac{P}{2+\sqrt{2}}}^2 = \frac{P^2}{12+8\sqrt{2}} = \frac{3-2\sqrt{2}}{4}P^2.}
+\]
+
