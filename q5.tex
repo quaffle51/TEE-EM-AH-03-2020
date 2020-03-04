@@ -1,3 +1,38 @@
 % !TeX root = ./TMA03.tex
 \begin{question}
-\end{question}
+Given that $a, b, c$ are constant and that $a > 0$, $b > 0$, $c > 0$, it will be shown that the stationary path of the functional
+\[
+	S[y] = \Int{0}{a}{x} \lr{y^{\prime 2} + 2b y},\quad y(a) = 0,
+\]
+with a natural boundary condition at $x = 0$ and subject to the constraint
+\[
+	C[y] = \Int{0}{a}{x} y = c,
+\]
+is given by
+\[
+	y(x) = \frac{3c}{2a^3}\lr{a^2-x^2},
+\]
+ as follows.
+ The \el is given by
+ \[
+ 	\EL.
+ \]
+ Now, 
+ \[
+ 	\overline{F} = y^{\prime 2} + 2b y -\lambda y,\quad\text{where } \lambda\text{ is a Lagrange multiplier.}
+ \]
+ \[
+ 	\pderiv{\overline{F}}{y} =2b -\lambda\quad\text{ and } \pderiv{\overline{F}}{y^\prime} = 2y^\prime.
+ \]
+ The \el becomes
+ \begin{align*}
+ 	\deriv{}{x}\lr{2y^\prime}-2b+\lambda = 0,\\
+ 	2y^{\prime\prime} - 2b + \lambda = 0.
+ \end{align*}
+ Hence, $y^{\prime\prime}=b-\dfrac{\lambda}{2},\quad$ 
+ $y^{\prime}=\lr{b-\dfrac{\lambda}{2}}x+c_1$ and 
+ $y=\lr{\dfrac{b}{2}-\dfrac{\lambda}{4}}x^2 + c_1x + c_2$, where $c_1$ and $c_2$ are arbitrary constants.  Applying the boundary condition $y(a)=0$
+ \[
+ 	y(a)=\lr{\dfrac{b}{2}-\dfrac{\lambda}{4}}a^2 + c_1a + c_2=0.
+ \]
+ \end{question}
