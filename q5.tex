@@ -12,28 +12,56 @@ is given by
 \[
 	y(x) = \frac{3c}{2a^3}\lr{a^2-x^2},
 \]
- as follows.
- The \el is given by
- \[
- 	\EL.
- \]
- Now, 
- \[
- 	\overline{F} = y^{\prime 2} + 2b y -\lambda y,\quad\text{where } \lambda\text{ is a Lagrange multiplier.}
- \]
- \[
- 	\pderiv{\overline{F}}{y} =2b -\lambda\quad\text{ and } \pderiv{\overline{F}}{y^\prime} = 2y^\prime.
- \]
- The \el becomes
- \begin{align*}
+as follows.
+The \el is given by
+\[
+	\EL.
+\]
+Now, 
+\[
+	\overline{F} = y^{\prime 2} + 2b y -\lambda y,\quad\text{where } \lambda\text{ is a Lagrange multiplier.}
+\]
+\[
+	\overline{F}_y = \pderiv{\overline{F}}{y} =2b -\lambda\quad\text{ and } \overline{F}_{y^\prime} = \pderiv{\overline{F}}{y^\prime} = 2y^\prime.
+\]
+The \el becomes
+\begin{align*}
  	\deriv{}{x}\lr{2y^\prime}-\lr{2b-\lambda} = 0,\\
  	2y^{\prime\prime} - 2b + \lambda = 0.
- \end{align*}
- Hence, $y^{\prime\prime}=b-\dfrac{\lambda}{2},\quad$ 
- $y^{\prime}=\lr{b-\dfrac{\lambda}{2}}x+c_1$ and 
- $y=\lr{\dfrac{b}{2}-\dfrac{\lambda}{4}}x^2 + c_1x + c_2$, where $c_1$ and $c_2$ are arbitrary constants.  Applying the boundary condition $y(a)=0$
+\end{align*}
+Hence,
+\begin{align*}
+	y^{\prime\prime}=& b-\dfrac{\lambda}{2},\\
+	y^{\prime}=& \lr{b-\dfrac{\lambda}{2}}x+c_1 \text{ and}\\
+	y=& \lr{\dfrac{b-\lambda/2}{2}}x^2 + c_1x + c_2, \text{ where  $c_1$ and $c_2$ are arbitrary constants}. 
+\end{align*}  
+Applying the boundary condition $y(a)=0$
  \[
- 	y(a)=\lr{\dfrac{b}{2}-\dfrac{\lambda}{4}}a^2 + c_1a + c_2=0.
+ 	y(a)=\lr{\dfrac{b-\lambda/2}{2}}a^2 + c_1a + c_2=0.
  \]
- 
- \end{question}
+ The \el must also satisfy the extra boundary condition $\overline{F}_{y^\prime}=0$ at $x=0$, thus
+ \begin{align*}
+ 	\overline{F}_{y^\prime} =& 2y^\prime = 0\quad\text{and}\quad y^\prime(0) = 0.\\
+ 	y^\prime(x) =& \lr{b-\frac{\lambda}{2}}x + c_1,\\
+ 	y^\prime(0) =& \lr{b-\frac{\lambda}{2}}(0) + c_1=0,\quad\text{thus,}\quad c_1=0.\\
+ \end{align*}
+Hence,
+\begin{align*}
+ 	y=& \lr{\dfrac{b-\lambda/2}{2}}x^2 + c_2, \quad\text{where}\quad c_2 =-\lr{\dfrac{b-\lambda/2}{2}}a^2.\\
+ 	\text{So, } y=& \lr{\dfrac{b-\lambda/2}{2}}\lr{x^2-a^2}.
+\end{align*}
+Now, given the constraint
+\begin{align*}
+	C\lrs{y} = \Int{0}{a}{x} y =& c,\\
+\Int{0}{a}{x}\lr{\dfrac{b-\lambda/2}{2}}\lr{x^2-a^2} =& c,\\
+\lr{\dfrac{b-\lambda/2}{2}} \Int{0}{a}{x}\lr{x^2-a^2} =& c,\\
+\lr{\dfrac{b-\lambda/2}{2}}\lrs{\frac{x^3}{3}-a^2x}_0^a=&c,\\
+\lr{\dfrac{b-\lambda/2}{2}}\lr{\frac{a^3}{3}-a^3} =& c,\\
+\lr{\dfrac{b-\lambda/2}{2}}\lr{\frac{-2a^3}{3}} =& c,\\
+\lr{b-\frac{\lambda}{2}}\lr{\frac{-a^3}{3}} =& c,\\
+-\lr{b-\frac{\lambda}{2}}\lr{\frac{a^3}{3}} =& c.
+\end{align*}
+Thus, 
+\[b-\dfrac{\lambda}{2} = -\dfrac{3c}{a^3}\] and \[y=-\dfrac{3c}{2a^3}\lr{x^2-a^2}.\]
+Thus, \[y=\dfrac{3c}{2a^3}\lr{a^2-x^2}, \text{ as required}.\]
+\end{question}
